@@ -1,0 +1,24 @@
+<ImageTestWidget>:
+
+    BoxLayout:
+        id: box
+        size: root.size
+        padding: 20
+        canvas.before:
+            Color:
+                rgba: 0.7, 0.7, 0.7, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        ScrollView:
+            id: scrollview
+            size: 640, 360
+            do_scroll_x: True
+            do_scroll_y: True
+
+            Image:
+                id: image
+                fit_mode: 'scale-down'
+                on_touch_down: root.on_image_down(args[1])
+                size_hint: None, None
